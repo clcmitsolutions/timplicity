@@ -548,3 +548,43 @@ textarea{ min-height: 100px; resize: vertical; }
 }
 .footer-bottom a{ text-decoration:none; color: inherit; }
 .footer-bottom a:hover{ color: var(--gold); }
+
+/* ===========================================================
+   Small-phone refinements (320–480px)
+   Everything above already reflows at tablet/large-phone width;
+   this tightens the last few spots that get cramped on narrow phones.
+   =========================================================== */
+@media (max-width: 480px){
+  .wordmark{ font-size: 1.1rem; gap: 0.4em; }
+  .wordmark .mark{ width: 32px; height: 32px; }
+  .footer-word .mark{ width: 32px; height: 32px; }
+
+  section{ padding: 44px 0; }
+  .hero{ padding-top: 40px; }
+
+  h1{ font-size: clamp(2.1rem, 9vw, 2.8rem); }
+  h2{ font-size: clamp(1.55rem, 6.5vw, 1.9rem); }
+
+  .btn{ padding: 0.8em 1.3em; font-size: 0.95rem; }
+  .hero-ctas .btn, .cta-banner .btn{ width: 100%; justify-content: center; }
+  .hero-ctas{ flex-direction: column; }
+
+  /* Menu rows: drop the dotted leader and right-align price on its own line
+     instead of squeezing name + tag + leader + price onto one row */
+  .menu-item{ flex-wrap: wrap; row-gap: 4px; }
+  .menu-item .leader{ display: none; }
+  .menu-item .name{ white-space: normal; }
+  .menu-item .price{ margin-left: auto; }
+
+  .gallery-grid{ grid-template-columns: 1fr; }
+  .gallery-grid .tall{ grid-row: auto; }
+
+  .footer-grid{ grid-template-columns: 1fr; gap: 26px; }
+
+  .cta-banner{ text-align: center; justify-content: center; }
+  .cta-banner > div{ width: 100%; }
+
+  .postcard:nth-child(2), .postcard:nth-child(3){ transform: none; }
+
+  .chip{ padding: 7px 13px; font-size: 0.85rem; }
+}
